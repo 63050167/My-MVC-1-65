@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MVC_63050167</title>
+  <%- include('../layouts/navbar.ejs'); %>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+        <b>Locate</b>
+        <form action="\add" method="post">
+          <select class="form-select " name="locate_name" aria-label=".form-select-lg example" required>
+            <option selected disabled value="">Open this select Locate</option>
+            <option name="locate_name" value="ลาดกระบัง (LKB)">ลาดกระบัง (LKB)</option>
+            <option name="locate_name" value="เดลี (DL)">เดลี (DL)</option>
+            <option name="locate_name" value="ลอนดอน (LDN)">ลอนดอน (LDN)/option>
+            <option name="locate_name" value="ปารีส (PRS)">ปารีส (PRS)</option>
+            <option name="locate_name" value="ซิดนีย์ (SDN)">ซิดนีย์ (SDN)</option>
+            <option name="locate_name" value="นิวยอร์ก (NY)">นิวยอร์ก (NY)</option>
+            <option name="locate_name" value="มาดากัสการ์ (MDG)">มาดากัสการ์ (MDG)</option>
+            <option name="locate_name" value="อเมซอน (AMZ)">อเมซอน (AMZ)</option>
+          </select>
+
+          <label for="locate_name" class="form-label"><b>latitude [Pls data type float only]</b></label>
+          <input class="form-control" name="latitude" id="latitude" placeholder="" required="" />
+          <label for="text_la" class="form-label"><b>direction latitude (N,S)</b></label>
+          <input type="text" class="form-control" name="text_la" id="text_la" placeholder="" required="" />
+          <label for="lognitude" class="form-label"><b>longitude [Pls data type float only]</b></label>
+          <input class="form-control" name="longitude" id="longitude" placeholder="" required="" />
+          <label for="text_long" class="form-label"><b>direction longitude (W,E)</b></label>
+          <input type="text" class="form-control" name="text_long" id="text_long" placeholder="" required="" />
+
+          <br>
+          <button type="submit" class="btn btn-primary " style="color: white; font-size: 20px">
+            Get Data
+          </button>
+          <br>
+          <p style="color: red;">
+            <% if(locals.err){ %><%=err%><% }%>
+          </p>
+        </form>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

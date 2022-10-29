@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Show Table</title>
+  <%- include('../layouts/navbar.ejs'); %>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+        <form action="/sort_data_min" method="/get">
+          <br />
+          <button type="submit" class="btn btn-primary" style="color: white">
+            Sort By Pythagoras Min
+          </button>
+        </form>
+        <form action="/sort_data_max" method="/get">
+          <br />
+          <button type="submit" class="btn btn-success" style="color: white">
+            Sort By Pythagoras Max
+          </button>
+        </form>
+      </div>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <!--Head Table -->
+              <th class="text-center" scope="col">Number</th>
+              <th class="text-center" scope="col">Locate</th>
+              <th class="text-center" scope="col">Latitude</th>
+              <th class="text-center" scope="col">Longitude</th>
+              <th class="text-center" scope="col">Pythagoras</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--loop form response and set value-->
+            <% for(let i of response) { %>
+            <tr>
+              <td class="text-center"><%= i.id %></td>
+              <td class="text-center"><%= i.locate_name %></td>
+              <td class="text-center"><%= i.latitude %> <%= i.text_la %></td>
+              <td class="text-center">
+                <%= i.longitude %> <%= i.text_long %>
+              </td>
+              <td class="text-center"><%= i.pythagoras %></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+        <form action="" method="">
+          <div class="text-center"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
